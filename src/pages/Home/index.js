@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+// eslint-disable-next-line
 import { Link, Route } from "react-router-dom";
 import Index from "../Index";
 import House from "../House";
 import Profile from "../Profile";
 import { TabBar } from "antd-mobile";
+import "./index.css";
 export default class Home extends Component {
   state = {
     // 当前标签栏选中是谁？
@@ -12,11 +14,11 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home">
-        <div>
+        {/* <div>
           <Link to="/home">首页</Link>
           <Link to="/home/house">房屋列表</Link>
           <Link to="/home/profile">个人中心</Link>
-        </div>
+        </div> */}
         {/* 二级路由 */}
         {/* 首页 */}
         <Route exact path="/home" component={Index}></Route>
@@ -32,31 +34,14 @@ export default class Home extends Component {
             barTintColor="white"
           >
             <TabBar.Item
-              title="Life"
-              key="Life"
-              icon={
-                <div
-                  style={{
-                    width: "22px",
-                    height: "22px",
-                    background:
-                      "url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat",
-                  }}
-                />
-              }
-              selectedIcon={
-                <div
-                  style={{
-                    width: "22px",
-                    height: "22px",
-                    background:
-                      "url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat",
-                  }}
-                />
-              }
+              title="首页"
+              key="Home"
+              icon={<i className="iconfont icon-ind" />}
+              selectedIcon={<i className="iconfont icon-ind" />}
               selected={this.state.selectedTab === "blueTab"}
               badge={1}
               onPress={() => {
+                this.props.history.push("/home");
                 this.setState({
                   selectedTab: "blueTab",
                 });
@@ -64,31 +49,14 @@ export default class Home extends Component {
               data-seed="logId"
             ></TabBar.Item>
             <TabBar.Item
-              icon={
-                <div
-                  style={{
-                    width: "22px",
-                    height: "22px",
-                    background:
-                      "url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat",
-                  }}
-                />
-              }
-              selectedIcon={
-                <div
-                  style={{
-                    width: "22px",
-                    height: "22px",
-                    background:
-                      "url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat",
-                  }}
-                />
-              }
-              title="Koubei"
-              key="Koubei"
+              icon={<i className="iconfont icon-findHouse" />}
+              selectedIcon={<i className="iconfont icon-findHouse" />}
+              title="房屋列表"
+              key="House"
               badge={"new"}
               selected={this.state.selectedTab === "redTab"}
               onPress={() => {
+                this.props.history.push("/home/house");
                 this.setState({
                   selectedTab: "redTab",
                 });
@@ -96,31 +64,14 @@ export default class Home extends Component {
               data-seed="logId1"
             ></TabBar.Item>
             <TabBar.Item
-              icon={
-                <div
-                  style={{
-                    width: "22px",
-                    height: "22px",
-                    background:
-                      "url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat",
-                  }}
-                />
-              }
-              selectedIcon={
-                <div
-                  style={{
-                    width: "22px",
-                    height: "22px",
-                    background:
-                      "url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat",
-                  }}
-                />
-              }
-              title="Friend"
-              key="Friend"
+              icon={<i className="iconfont icon-my" />}
+              selectedIcon={<i className="iconfont icon-my" />}
+              title="个人中心"
+              key="Profile"
               dot
               selected={this.state.selectedTab === "greenTab"}
               onPress={() => {
+                this.props.history.push("/home/profile");
                 this.setState({
                   selectedTab: "greenTab",
                 });

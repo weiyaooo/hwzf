@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "./index.css";
+import "./assets/fonts/iconfont.css";
 // 引用antd组件样式
 // import "antd-mobile/dist/antd-mobile.css";
 ReactDOM.render(
