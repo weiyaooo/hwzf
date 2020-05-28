@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-
+import "./index.css";
+// 引用antd组件样式
+// import "antd-mobile/dist/antd-mobile.css";
 ReactDOM.render(
   <React.StrictMode>
     <App />
