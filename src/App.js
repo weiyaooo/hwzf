@@ -1,8 +1,10 @@
 import React from "react";
+
 import {
   BrowserRouter as Router,
   Route,
   Switch,
+  // eslint-disable-next-line
   Link,
   Redirect,
 } from "react-router-dom";
@@ -15,12 +17,12 @@ function App() {
   return (
     <div className="app">
       <Router>
-        <div>
+        {/* <div>
           <Link to="/home">首页</Link>
           <Link to="/citylist">城市列表</Link>
           <Link to="/map">地图</Link>
-        </div>
-        <hr></hr>
+        </div> */}
+        {/* <hr></hr> */}
         <Switch>
           {/* 重定向 */}
           <Redirect exact from="/" to="/home"></Redirect>

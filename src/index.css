@@ -21,12 +21,10 @@ li {
 }
 
 * {
-  /* touch-action: pan-y; */
+  touch-action: pan-y;
   box-sizing: border-box;
 }
-.tabBox {
-  position: fixed;
+#root,
+.app {
   height: 100%;
-  width: 100%;
-  top: 0;
 }

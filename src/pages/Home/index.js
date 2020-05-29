@@ -6,10 +6,12 @@ import House from "../House";
 import Profile from "../Profile";
 import { TabBar } from "antd-mobile";
 import "./index.css";
+import { tabItemData } from "../../utils/tabBarConf";
+
 export default class Home extends Component {
   state = {
     // 当前标签栏选中是谁？
-    selectedTab: "blueTab",
+    selectedTab: this.props.location.pathname,
   };
   render() {
     return (
@@ -33,50 +35,24 @@ export default class Home extends Component {
             tintColor="#33A3F4"
             barTintColor="white"
           >
-            <TabBar.Item
-              title="首页"
-              key="Home"
-              icon={<i className="iconfont icon-ind" />}
-              selectedIcon={<i className="iconfont icon-ind" />}
-              selected={this.state.selectedTab === "blueTab"}
-              badge={1}
-              onPress={() => {
-                this.props.history.push("/home");
-                this.setState({
-                  selectedTab: "blueTab",
-                });
-              }}
-              data-seed="logId"
-            ></TabBar.Item>
-            <TabBar.Item
-              icon={<i className="iconfont icon-findHouse" />}
-              selectedIcon={<i className="iconfont icon-findHouse" />}
-              title="房屋列表"
-              key="House"
-              badge={"new"}
-              selected={this.state.selectedTab === "redTab"}
-              onPress={() => {
-                this.props.history.push("/home/house");
-                this.setState({
-                  selectedTab: "redTab",
-                });
-              }}
-              data-seed="logId1"
-            ></TabBar.Item>
-            <TabBar.Item
-              icon={<i className="iconfont icon-my" />}
-              selectedIcon={<i className="iconfont icon-my" />}
-              title="个人中心"
-              key="Profile"
-              dot
-              selected={this.state.selectedTab === "greenTab"}
-              onPress={() => {
-                this.props.history.push("/home/profile");
-                this.setState({
-                  selectedTab: "greenTab",
-                });
-              }}
-            ></TabBar.Item>
+            {tabItemData.map((item) => {
+              return (
+                <TabBar.Item
+                  title={item.title}
+                  key={item.key}
+                  icon={<i className={`iconfont ${item.icon}`} />}
+                  selectedIcon={<i className={`iconfont ${item.icon}`} />}
+                  selected={this.state.selectedTab === item.path}
+                  onPress={() => {
+                    this.props.history.push(item.path);
+                    this.setState({
+                      selectedTab: item.path,
+                    });
+                  }}
+                  data-seed="logId"
+                ></TabBar.Item>
+              );
+            })}
           </TabBar>
         </div>
       </div>
