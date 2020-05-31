@@ -12,12 +12,11 @@ export default class Map extends Component {
    */
   initMap = () => {
     console.log(window);
-    const { BMapGL } = window;
+    const { BMap } = window;
 
-    console.log(BMapGL);
-    const map = new BMapGL.Map("container");
+    const map = new BMap.Map("container");
     // 设置地图显示的中心点=>天安门
-    const point = new BMapGL.Point(116.404, 39.915);
+    const point = new BMap.Point(116.404, 39.915);
     // 地图初始化，同时设置地图展示级别
     map.centerAndZoom(point, 15);
   };

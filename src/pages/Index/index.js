@@ -6,8 +6,9 @@ import { BASE_URL } from "../../utils/axios";
 import { getSwiper, getGroup, getNew } from "../../utils/api/home";
 import { navs } from "../../utils/navConf";
 import "./index.scss";
-
 import { Grid } from "antd-mobile";
+// eslint-disable-next-line
+import { getCurrCity, getCityList } from "../../utils/api/cityList";
 export default class Index extends Component {
   state = {
     //轮播数据
@@ -20,12 +21,17 @@ export default class Index extends Component {
     //新闻
     news: [],
     keyWord: "",
+    currCity: {
+      label: "--",
+      value: "",
+    },
   };
   componentDidMount() {
     // this.getSwiper();
     // this.getGroup();
     // this.getNew();
     this.getDatas();
+    this.getCurCity();
   }
 
   //使用Promise进行重构
@@ -202,6 +208,26 @@ export default class Index extends Component {
       </div>
     );
   };
+  getCurCity = () => {
+    const { BMap } = window;
+    //回调函数获取数据
+    //根据上网的ip,定位当前的城市
+    //初始化 local City 定位实例
+
+    //获取到了当前城市
+    const myCity = new BMap.LocalCity();
+    myCity.get(async (result) => {
+      const cityName = result.name;
+      console.log(cityName);
+      const { status, data } = await getCurrCity(cityName);
+      if (status === 200) {
+        this.setState({
+          currCity: data,
+        });
+      }
+    });
+  };
+  //定位
 
   //渲染搜索栏
   renderSearch = () => {
@@ -209,7 +235,7 @@ export default class Index extends Component {
       <Flex justify="around" className="topNav">
         <div className="searchBox">
           <div className="city">
-            北京
+            {this.state.currCity.label}
             <i className="iconfont icon-arrow" />
           </div>
 
