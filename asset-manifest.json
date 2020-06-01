@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/hwzf/static/css/main.2d873b34.chunk.css",
+    "main.js": "/hwzf/static/js/main.672bad32.chunk.js",
+    "main.js.map": "/hwzf/static/js/main.672bad32.chunk.js.map",
+    "runtime-main.js": "/hwzf/static/js/runtime-main.e54bc26b.js",
+    "runtime-main.js.map": "/hwzf/static/js/runtime-main.e54bc26b.js.map",
+    "static/css/2.78a87de0.chunk.css": "/hwzf/static/css/2.78a87de0.chunk.css",
+    "static/js/2.9a1b55f8.chunk.js": "/hwzf/static/js/2.9a1b55f8.chunk.js",
+    "static/js/2.9a1b55f8.chunk.js.map": "/hwzf/static/js/2.9a1b55f8.chunk.js.map",
+    "index.html": "/hwzf/index.html",
+    "precache-manifest.36ccea8c174da1575b473e3860afba3e.js": "/hwzf/precache-manifest.36ccea8c174da1575b473e3860afba3e.js",
+    "service-worker.js": "/hwzf/service-worker.js",
+    "static/css/2.78a87de0.chunk.css.map": "/hwzf/static/css/2.78a87de0.chunk.css.map",
+    "static/css/main.2d873b34.chunk.css.map": "/hwzf/static/css/main.2d873b34.chunk.css.map",
+    "static/js/2.9a1b55f8.chunk.js.LICENSE.txt": "/hwzf/static/js/2.9a1b55f8.chunk.js.LICENSE.txt",
+    "static/media/iconfont.css": "/hwzf/static/media/iconfont.f58b610e.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e54bc26b.js",
+    "static/css/2.78a87de0.chunk.css",
+    "static/js/2.9a1b55f8.chunk.js",
+    "static/css/main.2d873b34.chunk.css",
+    "static/js/main.672bad32.chunk.js"
+  ]
+}
